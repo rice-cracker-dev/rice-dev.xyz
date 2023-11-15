@@ -1,0 +1,31 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply duration-150;
+    }
+
+    :root [data-theme='wintry'] {
+        font-family: "Inter Variable", sans-serif;
+
+        --theme-font-family-base: "Inter Variable", sans-serif;
+        --theme-font-family-heading: "Outfit Variable", sans-serif;
+    }
+
+    html, body {
+        @apply h-full overflow-hidden;
+    }
+
+    .dark body {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image:
+                radial-gradient(at 50% 0%,rgba(var(--color-secondary-500) / .18) 0px,transparent 75%),
+                radial-gradient(at 100% 0%,rgba(var(--color-tertiary-500) / .18) 0px,transparent 50%);
+    }
+}
